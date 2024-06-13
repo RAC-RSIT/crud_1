@@ -40,13 +40,13 @@
                         <td><?= $book['isbn'] ?></td>
                         <td><?= $book['title'] ?></td>
                         <td><?= $book['author'] ?></td>
-                        <td><?= $book['price'] ?></td>
+                        <td><b>$</b> <?= $book['price'] ?></td>
                         <td><?= $book['stock'] ?></td>
-                        <td><button class="btn btn-warning">Edit</button></td>
+                        <td><a href="update_page.php?isbn=<?= $book['isbn'] ?>" class="btn btn-warning">Edit</a></td>
                         <td>
                             <form action="delete_operation.php" method="POST">
                                 <!-- this hidden input field is used to pass the isbn of the clicked record when the form is submitted -->
-                                <input type="hidden" name="book_isbn" value="<?= $book['isbn']; ?>"> 
+                                <input type="hidden" name="isbn" value="<?= $book['isbn']; ?>"> 
                                 <input type="submit" class="btn btn-danger" name="delete-book" value="DELETE">
                             </form>
                         </td>
@@ -57,7 +57,7 @@
             </tbody>
         </table>
 
-        <!-- Modal starts here -->
+        <!-- Add book Modal starts here -->
         <div class="modal fade" id="addBookModal" tabindex="-1" aria-labelledby="addBookModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -96,7 +96,7 @@
                 </div>
             </div>
         </div>
-        <!-- Modal ends here -->
+        <!-- Add book Modal ends here -->
     </section>
 
     <!-- bootstrap js -->
