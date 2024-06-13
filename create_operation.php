@@ -28,4 +28,5 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
+// go to index.php
 header("Location: index.php");

@@ -43,7 +43,13 @@
                         <td><?= $book['price'] ?></td>
                         <td><?= $book['stock'] ?></td>
                         <td><button class="btn btn-warning">Edit</button></td>
-                        <td><button class="btn btn-danger">Delete</button></td>
+                        <td>
+                            <form action="delete_operation.php" method="POST">
+                                <!-- this hidden input field is used to pass the isbn of the clicked record when the form is submitted -->
+                                <input type="hidden" name="book_isbn" value="<?= $book['isbn']; ?>"> 
+                                <input type="submit" class="btn btn-danger" name="delete-book" value="DELETE">
+                            </form>
+                        </td>
                     </tr>
                 <?php 
                     }
